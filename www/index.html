@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script>
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/onsenui/js/onsenui.min.js"></script>
+    <script src="lib/onsenui/js/angular-onsenui.min.js"></script>
+
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="app/app.js"></script>
+</head>
+<body>
+    <ons-page ng-controller="HelloController as hello">
+        <ons-toolbar>
+        <div class="center">{{ byteName || "...Loading"}}</div>
+        </ons-toolbar>
+
+        <section style="margin: 10px;">
+        <ul class="list">
+          <li class="list__item">
+            <span class="list__item__line-height"><b>Disk Space</b></span><span> {{ byteQuota }}</span>
+          </li>
+          <li class="list__item">
+            <span class="list__item__line-height"><b>Percentage</b></span><span> {{ byteQuotaPercentage }}</span>
+          </li>
+          <li class="list__item">
+            <span class="list__item__line-height"><b>Paid until</b></span><span> {{ bytePaidTill }}</span>
+          </li>
+        </ul>
+        </section>
+    </ons-page>
+</body>
+</html>
